@@ -8,7 +8,7 @@ dotenv.config();
 const PORT = 5000;
 
 app.use(cors({
-    origin: ['http://localhost:5173', 'https://mother-nature-status-ina2pojq0-chioma-okekes-projects-f1675783.vercel.app'], // Add your Vercel URL here
+    origin: ['http://localhost:5173', 'https://mother-nature-status-253qf3q12-chioma-okekes-projects-f1675783.vercel.app'], // Add your Vercel URL here
     optionsSuccessStatus: 200,
 }));
 
