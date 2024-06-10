@@ -1,0 +1,2 @@
+# .gitignore file in the root directory
+/backend/.env
