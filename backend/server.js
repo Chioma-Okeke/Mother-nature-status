@@ -7,22 +7,10 @@ const cors = require('cors')
 dotenv.config();
 const PORT = 5000;
 
-const allowedOrigins = [
-    'http://localhost:5173',
-    'https://mother-nature-status.vercel.app'
-  ];
-  
-  app.use(cors({
-    origin: function (origin, callback) {
-      if (!origin) return callback(null, true);
-      if (allowedOrigins.indexOf(origin) === -1) {
-        const msg = 'The CORS policy for this site does not allow access from the specified origin.';
-        return callback(new Error(msg), false);
-      }
-      return callback(null, true);
-    },
+app.use(cors({
+    origin: ['http://localhost:5173', 'https://mother-nature-status-ina2pojq0-chioma-okekes-projects-f1675783.vercel.app'], // Add your Vercel URL here
     optionsSuccessStatus: 200,
-  }));
+}));
 
 
 const API_KEY = process.env.WEATHER_API_KEY 
