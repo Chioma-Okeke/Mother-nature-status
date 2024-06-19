@@ -14,6 +14,9 @@ import logo from "./assets/transparent logo desing.png";
 import rainVideo from "./assets/rain.mp4";
 import sunnyVideo from "./assets/sunny.mp4";
 import cloudyVideo from "./assets/cloudy.mp4";
+import sunnyImaage from "./assets/sunnyimage.jpg";
+import rainyImage from "./assets/rainyImage.jpg";
+import cloudyImage from "./assets/cloudyImage.jpg";
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -38,6 +41,7 @@ const App = () => {
             );
             setWeather(data);
             setVideoSrc(data.details);
+            console.log(videoSrc, "video")
         } catch (error) {
             toast.error(
                 `Cannot get details for that country. Enter country again`
@@ -54,10 +58,9 @@ const App = () => {
         <div>
             <video
                 autoPlay
-                muted
                 loop
-                playsInline
-                className="z-auto fixed left-0 top-0 w-full h-full object-cover cursor-default"
+                muted
+                className="z-auto fixed left-0 top-0 w-full h-full object-cover cursor-default hidden sm:block"
                 key={videoSrc}
             >
                 <source
@@ -72,8 +75,21 @@ const App = () => {
                     }`}
                 />
             </video>
+            <img
+                src={`${
+                    videoSrc === "Clear"
+                        ? sunnyImaage
+                        : videoSrc === "Rain"
+                        ? rainyImage
+                        : videoSrc === "Clouds"
+                        ? cloudyImage
+                        : sunnyImaage
+                }`}
+                key={videoSrc}
+                className="z-auto fixed left-0 top-0 w-full h-full object-cover cursor-default block sm:hidden"
+            />
             <div
-                className={`z-20 relative mx-auto max-w-screen-lg sm:mt-4 py-5 px-5 sm:px-20 md:px-32 bg-gradient-to-br from-cyan-600 to-blue-700 opacity-80`}
+                className='z-20 relative mx-auto max-w-screen-lg py-5 px-5 sm:px-20 md:px-32 opacity-80 bg-slate-600'
             >
                 <TopButons setQuery={setQuery} />
                 <Inputs setQuery={setQuery} setUnits={setUnits} />

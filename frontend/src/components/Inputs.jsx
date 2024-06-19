@@ -31,7 +31,7 @@ const Inputs = ({ setQuery, setUnits }) => {
                 />
                 <BiSearch
                     size={30}
-                    className="ml-1 sm:ml-0 cursor-pointer transition ease-out sm:hover:scale-125"
+                    className="mx-2 sm:ml-0 cursor-pointer transition ease-out sm:hover:scale-125"
                     onClick={() => {
                         setQuery({ q: cityName });
                         setCityName("");
