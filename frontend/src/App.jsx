@@ -70,7 +70,6 @@ const App = () => {
                             ? cloudyVideo
                             : sunnyVideo
                     }`}
-                    type="video/mp4"
                 />
             </video>
             <div
