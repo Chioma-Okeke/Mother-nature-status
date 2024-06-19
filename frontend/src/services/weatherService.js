@@ -1,12 +1,13 @@
 import { DateTime } from "luxon";
 
 /* eslint-disable no-unused-vars */
+const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+const BASE_URL = "https://api.openweathermap.org/data/2.5/";
 
 function getWeatherData(infoType, searchParams) {
-    const url = new URL(
-        `https://boiling-sands-10757-8c12f162a533.herokuapp.com/api/${infoType}`
-    );
-    url.search = new URLSearchParams({ ...searchParams });
+    console.log(API_KEY, "key")
+    const url = new URL(BASE_URL + infoType);
+    url.search = new URLSearchParams({ ...searchParams, appid: API_KEY });
 
     return fetch(url).then((res) => res.json());
 }

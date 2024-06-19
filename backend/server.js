@@ -9,7 +9,14 @@ const PORT = 5000;
 
 app.use(
     cors({
-        origin: "https://mother-nature-status.vercel.app/",
+        origin: [
+            "https://mother-nature-status.vercel.app/",
+            "http://localhost:5173",
+            "https://boiling-sands-10757-8c12f162a533.herokuapp.com/",
+        ],
+        methods: ["GET"],
+        credentials: true,
+        origin: true,
         optionsSuccessStatus: 200,
     })
 );
