@@ -4,7 +4,7 @@ import { DateTime } from "luxon";
 
 function getWeatherData(infoType, searchParams) {
     const url = new URL(
-        `https://boiling-sands-10757.herokuapp.com/api/${infoType}`
+        `https://boiling-sands-10757-8c12f162a533.herokuapp.com/api/${infoType}`
     );
     url.search = new URLSearchParams({ ...searchParams });
 
