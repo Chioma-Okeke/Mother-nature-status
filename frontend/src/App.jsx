@@ -56,7 +56,8 @@ const App = () => {
                 autoPlay
                 muted
                 loop
-                className="z-auto fixed left-0 top-0 w-full h-full object-cover"
+                playsInline
+                className="z-auto fixed left-0 top-0 w-full h-full object-cover cursor-default"
                 key={videoSrc}
             >
                 <source

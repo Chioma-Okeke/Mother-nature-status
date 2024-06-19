@@ -9,11 +9,7 @@ const PORT = 5000;
 
 app.use(
     cors({
-        origin: [
-            "http://localhost:5174",
-            "http://localhost:5173",
-            "https://mother-nature-status.vercel.app",
-        ], // Add your Vercel URL here
+        origin: ["https://mother-nature-status.vercel.app"], // Add your Vercel URL here
         optionsSuccessStatus: 200,
     })
 );
